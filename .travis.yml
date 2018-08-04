@@ -9,9 +9,9 @@ jobs:
         - tar -xf secrets.tar -C config/
       install:
         - docker-compose build
-        - docker-compose up -d app
+        - docker-compose up app
         - until docker-compose exec mysql mysql -uroot --password=${MYSQL_ROOT_PASSWORD} -e 'SHOW DATABASES;'; do sleep 1; done
-        - if docker-compose exec app echo hi; then docker logs -t nctuplus_backend_app_1; fi
+        - if docker-compose exec app echo hi; then docker-compose logs app; fi
       script:
         - docker-compose exec app rails db:migrate
         - docker-compose exec app bundle exec rspec
