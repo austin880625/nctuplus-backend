@@ -5,13 +5,13 @@ jobs:
       services:
         - docker
       before_install:
-        - openssl aes-256-cbc -K $encrypted_613f6608c56d_key -iv $encrypted_613f6608c56d_iv -in secrets.tar.enc -out secrets.tar -d
+        - openssl aes-256-cbc -K $encrypted_7b9dbc922c26_key -iv $encrypted_7b9dbc922c26_iv -in secrets.tar.enc -out secrets.tar -d
         - tar -xvf secrets.tar -C config/
       install:
         - docker-compose build
-        - docker-compose up app
+        - docker-compose up -d app
         - until docker-compose exec mysql mysql -uroot --password=${MYSQL_ROOT_PASSWORD} -e 'SHOW DATABASES;'; do sleep 1; done
-        - if docker-compose exec app echo hi; then docker-compose logs app; fi
+        - docker-compose logs app
       script:
         - docker-compose exec app rails db:migrate
         - docker-compose exec app bundle exec rspec
