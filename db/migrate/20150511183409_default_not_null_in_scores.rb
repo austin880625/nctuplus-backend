@@ -1,4 +1,4 @@
-class DefaultNotNullInScores < ActiveRecord::Migration
+class DefaultNotNullInScores < ActiveRecord::Migration[5.0]
   def change
 		change_column :normal_scores, :user_id, :integer, :null=>false
 		change_column :normal_scores, :course_detail_id, :integer, :null=>false

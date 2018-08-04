@@ -1,4 +1,4 @@
-class AddAttachmentCoverToBookTradeInfos < ActiveRecord::Migration
+class AddAttachmentCoverToBookTradeInfos < ActiveRecord::Migration[5.0]
   def self.up
 		add_column :book_trade_infos, :cover_file_name, :string, :after=>"desc"
 		add_column :book_trade_infos, :cover_content_type, :string, :after=>"cover_file_name"

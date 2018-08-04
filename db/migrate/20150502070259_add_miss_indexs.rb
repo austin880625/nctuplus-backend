@@ -1,4 +1,4 @@
-class AddMissIndexs < ActiveRecord::Migration
+class AddMissIndexs < ActiveRecord::Migration[5.0]
   def change
     add_index :cf_field_need, :course_field_id
 #    add_index :course_details , :department_id

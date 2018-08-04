@@ -1,4 +1,4 @@
-class AddTableTempCs < ActiveRecord::Migration
+class AddTableTempCs < ActiveRecord::Migration[5.0]
   def change
   	create_table :temp_course_simulations, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
 			t.string :student_id

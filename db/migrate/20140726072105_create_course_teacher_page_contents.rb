@@ -1,4 +1,4 @@
-class CreateCourseTeacherPageContents < ActiveRecord::Migration
+class CreateCourseTeacherPageContents < ActiveRecord::Migration[5.0]
   def change
     create_table :course_teacher_page_contents do |t|
 		t.integer :course_teachership_id

@@ -1,6 +1,6 @@
 class BulletinController < ApplicationController
-    before_filter :checkTopManager
-    
+    before_action :checkTopManager
+
 	def index
   		@q = Bulletin.search(params[:q])
 		@bulletins = @q.result.order('created_at DESC')

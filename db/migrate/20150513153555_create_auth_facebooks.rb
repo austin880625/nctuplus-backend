@@ -1,4 +1,4 @@
-class CreateAuthFacebooks < ActiveRecord::Migration
+class CreateAuthFacebooks < ActiveRecord::Migration[5.0]
   def up
     create_table(:auth_facebooks, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.integer :user_id

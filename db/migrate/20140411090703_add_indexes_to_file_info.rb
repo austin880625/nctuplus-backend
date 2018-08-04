@@ -1,4 +1,4 @@
-class AddIndexesToFileInfo < ActiveRecord::Migration
+class AddIndexesToFileInfo < ActiveRecord::Migration[5.0]
   def change
   
 #  add_index :file_infos, :course_id

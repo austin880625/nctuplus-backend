@@ -1,4 +1,4 @@
-class RenameTable < ActiveRecord::Migration
+class RenameTable < ActiveRecord::Migration[5.0]
   def change
   	rename_column :course_content_lists, :course_teacher_page_content_id, :course_teachership_id
   	

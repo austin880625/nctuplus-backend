@@ -1,4 +1,4 @@
-class CreateCourseFieldSelfships < ActiveRecord::Migration
+class CreateCourseFieldSelfships < ActiveRecord::Migration[5.0]
   def change
     create_table :course_field_selfships do |t|
 	  t.integer :parent_id

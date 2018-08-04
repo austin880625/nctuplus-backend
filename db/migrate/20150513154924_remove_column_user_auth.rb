@@ -1,4 +1,4 @@
-class RemoveColumnUserAuth < ActiveRecord::Migration
+class RemoveColumnUserAuth < ActiveRecord::Migration[5.0]
   def change
     remove_column :users, :student_id
     remove_column :users, :uid

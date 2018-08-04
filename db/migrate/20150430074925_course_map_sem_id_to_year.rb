@@ -1,4 +1,4 @@
-class CourseMapSemIdToYear < ActiveRecord::Migration
+class CourseMapSemIdToYear < ActiveRecord::Migration[5.0]
   def up
 	
 		add_column :course_maps, :year, :integer, :after=>:desc

@@ -1,4 +1,4 @@
-class CreateBulletins < ActiveRecord::Migration
+class CreateBulletins < ActiveRecord::Migration[5.0]
   def change
     create_table :bulletins do |t|
 

@@ -1,4 +1,4 @@
-class DropUnusedTable < ActiveRecord::Migration[5.0]
+class DropUnusedTable < ActiveRecord::Migration[5.0][5.0]
   def change
     drop_table :ckeditor_assets
     drop_table :course_map_public_comments

@@ -1,4 +1,4 @@
-class CreateCfCredits < ActiveRecord::Migration
+class CreateCfCredits < ActiveRecord::Migration[5.0]
   def change
     create_table :cf_credits do |t|
       t.integer :course_field_id

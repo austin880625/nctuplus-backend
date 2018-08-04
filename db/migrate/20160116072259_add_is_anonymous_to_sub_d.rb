@@ -1,4 +1,4 @@
-class AddIsAnonymousToSubD < ActiveRecord::Migration
+class AddIsAnonymousToSubD < ActiveRecord::Migration[5.0]
   def change
 		add_column :sub_discusses, :is_anonymous, :boolean, :default=>false, :after=> :content
 		remove_column :sub_discusses, :likes

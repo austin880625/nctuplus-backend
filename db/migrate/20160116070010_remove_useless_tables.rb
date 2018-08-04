@@ -1,4 +1,4 @@
-class RemoveUselessTables < ActiveRecord::Migration
+class RemoveUselessTables < ActiveRecord::Migration[5.0]
   def change
 #    drop_table :course_simulations
 #    drop_table :discuss_verifies

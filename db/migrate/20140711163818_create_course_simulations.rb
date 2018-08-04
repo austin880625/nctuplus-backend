@@ -1,4 +1,4 @@
-class CreateCourseSimulations < ActiveRecord::Migration
+class CreateCourseSimulations < ActiveRecord::Migration[5.0]
   def change
     create_table :course_simulations do |t|
 	  t.integer :user_id

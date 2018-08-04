@@ -1,4 +1,4 @@
-class UserSemesterIdToYear < ActiveRecord::Migration
+class UserSemesterIdToYear < ActiveRecord::Migration[5.0]
    def up
 	
 		add_column :users, :year, :integer, :after=>:name, :default=>0, :nil=>false

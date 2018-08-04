@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  before_filter :redirect_if_old
+  before_action :redirect_if_old
   protect_from_forgery with: :exception
   protect_from_forgery
   rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
@@ -33,7 +33,7 @@ class ApplicationController < ActionController::Base
         return true
       end
     else
-      return true 
+      return true
     end
   end
 
@@ -54,10 +54,10 @@ class ApplicationController < ActionController::Base
     elsif session[:auth_e3].nil?
       msg, flag = '必須由E3登入才可使用' , false
     end
-    if !flag	
+    if !flag
       alertmesg("info",'Sorry',msg)
       redirect_back
-    end 
+    end
     return flag
   end
 
@@ -69,10 +69,10 @@ class ApplicationController < ActionController::Base
     elsif session[:auth_nctu].nil? && session[:auth_e3].nil?
       msg, flag = '必須由NCTU帳號登入才可使用' , false
     end
-    if !flag	
+    if !flag
       alertmesg("info",'Sorry',msg)
       redirect_back
-    end 
+    end
     return flag
   end
 
@@ -84,10 +84,10 @@ class ApplicationController < ActionController::Base
     elsif session[:auth_facebook].nil?
       msg, flag = '必須由facebook登入才可使用' , false
     end
-    if !flag	
+    if !flag
       alertmesg("info",'Sorry',msg)
       redirect_back
-    end 
+    end
     return flag
   end
 
@@ -95,14 +95,14 @@ class ApplicationController < ActionController::Base
     if user_signed_in? && (current_user.role==0 || current_user.role == 2)
       return true
     end
-    alertmesg("danger",'Sorry',"您沒有操作此動作的權限")  
+    alertmesg("danger",'Sorry',"您沒有操作此動作的權限")
     redirect_to root_url
   end
 
   def checkTopManagerNoReDirect
     if user_signed_in? and current_user.role==0
       true
-    else 
+    else
       false
     end
   end
@@ -112,9 +112,9 @@ class ApplicationController < ActionController::Base
       if current_user.role==0
         return true
       else
-        alertmesg("danger",'Sorry',"您沒有操作此動作的權限")    
+        alertmesg("danger",'Sorry',"您沒有操作此動作的權限")
         redirect_to root_url
-      end	  	
+      end
     end
   end
 
@@ -153,7 +153,7 @@ class ApplicationController < ActionController::Base
     request.env['omniauth.origin'] || stored_location_for(resource) || root_path
   end
 
-private	
+private
         def redirect_back
                 #if !request.xhr?
                 session[:last_url]=request.original_url	#save last url before redirect to login page
@@ -163,7 +163,7 @@ private
 
         def redirect_if_old
     if request.host == 'nctuplus.nctucs.net'
-      redirect_to "#{request.protocol}plus.nctu.edu.tw:#{request.port}#{request.fullpath}", :status => :moved_permanently 
+      redirect_to "#{request.protocol}plus.nctu.edu.tw:#{request.port}#{request.fullpath}", :status => :moved_permanently
     end
   end
 

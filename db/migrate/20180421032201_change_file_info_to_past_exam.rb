@@ -1,4 +1,4 @@
-class ChangeFileInfoToPastExam < ActiveRecord::Migration[5.0]
+class ChangeFileInfoToPastExam < ActiveRecord::Migration[5.0][5.0]
   def change
     rename_table :file_infos, :past_exams
     rename_column :past_exams, :owner_id, :user_id

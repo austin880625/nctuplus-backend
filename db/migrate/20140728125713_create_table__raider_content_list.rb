@@ -1,4 +1,4 @@
-class CreateTableRaiderContentList < ActiveRecord::Migration
+class CreateTableRaiderContentList < ActiveRecord::Migration[5.0]
   def change
     create_table :raider_content_lists do |t|
     	t.integer :course_teacher_page_content_id

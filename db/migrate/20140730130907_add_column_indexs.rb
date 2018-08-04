@@ -1,4 +1,4 @@
-class AddColumnIndexs < ActiveRecord::Migration
+class AddColumnIndexs < ActiveRecord::Migration[5.0]
   def change
   	add_index :comments, :user_id
   	add_index :comments, :course_teachership_id

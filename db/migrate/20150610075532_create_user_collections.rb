@@ -1,4 +1,4 @@
-class CreateUserCollections < ActiveRecord::Migration
+class CreateUserCollections < ActiveRecord::Migration[5.0]
   def change
     create_table :user_collections do |t|
 			t.belongs_to :user

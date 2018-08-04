@@ -1,4 +1,4 @@
-class AddContactWayToBookTradeInfos < ActiveRecord::Migration
+class AddContactWayToBookTradeInfos < ActiveRecord::Migration[5.0]
   def change
 		add_column :book_trade_infos, :contact_way, :integer, :after=>:user_id, :default=>0, :null=>false
 		add_index :book_trade_infos, :user_id

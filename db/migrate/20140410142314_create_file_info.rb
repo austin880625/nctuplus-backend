@@ -1,4 +1,4 @@
-class CreateFileInfo < ActiveRecord::Migration
+class CreateFileInfo < ActiveRecord::Migration[5.0]
   def change
     create_table :file_infos, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.integer :owner_id

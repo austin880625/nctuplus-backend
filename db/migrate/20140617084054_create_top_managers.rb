@@ -1,4 +1,4 @@
-class CreateTopManagers < ActiveRecord::Migration
+class CreateTopManagers < ActiveRecord::Migration[5.0]
   def change
     create_table :top_managers do |t|
 	  t.integer :user_id

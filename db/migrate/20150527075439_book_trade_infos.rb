@@ -1,4 +1,4 @@
-class BookTradeInfos < ActiveRecord::Migration
+class BookTradeInfos < ActiveRecord::Migration[5.0]
   def up
     create_table(:book_trade_infos, options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.integer :book_id, :default => 0, :null => false

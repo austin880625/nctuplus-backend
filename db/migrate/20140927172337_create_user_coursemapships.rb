@@ -1,4 +1,4 @@
-class CreateUserCoursemapships < ActiveRecord::Migration
+class CreateUserCoursemapships < ActiveRecord::Migration[5.0]
   def change
     create_table :user_coursemapships do |t|
 			t.integer :course_map_id

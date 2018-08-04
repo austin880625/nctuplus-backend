@@ -1,4 +1,4 @@
-class CreateNewcomerClubs < ActiveRecord::Migration
+class CreateNewcomerClubs < ActiveRecord::Migration[5.0]
   def change
     create_table :newcomer_clubs do |t|
       t.string :category

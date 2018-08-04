@@ -1,4 +1,4 @@
-class CreateCmCfships < ActiveRecord::Migration
+class CreateCmCfships < ActiveRecord::Migration[5.0]
   def change
     create_table :cm_cfships do |t|
 			t.integer :course_map_id

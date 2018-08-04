@@ -1,4 +1,4 @@
-class CreateEventFollows < ActiveRecord::Migration
+class CreateEventFollows < ActiveRecord::Migration[5.0]
   def change
     create_table :event_follows do |t|
 			t.integer :user_id

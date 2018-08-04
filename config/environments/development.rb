@@ -27,7 +27,7 @@ Nctuplus::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
-	
+
 	#email
 	config.action_mailer.delivery_method = :sendmail
 	config.action_mailer.default_url_options = { host: "nctuplus", port: 25}

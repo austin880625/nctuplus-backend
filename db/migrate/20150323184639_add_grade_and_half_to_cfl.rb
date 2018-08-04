@@ -1,4 +1,4 @@
-class AddGradeAndHalfToCfl < ActiveRecord::Migration
+class AddGradeAndHalfToCfl < ActiveRecord::Migration[5.0]
   def change
 		change_column :course_field_lists, :course_group_id, :integer, :after=> :course_id
 		change_column :course_field_lists, :record_type, :boolean, :after=> :course_group_id

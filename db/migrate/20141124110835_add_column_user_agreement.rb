@@ -1,4 +1,4 @@
-class AddColumnUserAgreement < ActiveRecord::Migration
+class AddColumnUserAgreement < ActiveRecord::Migration[5.0]
   def change
 	add_column :users, :agree, :boolean, :default=>false
   end

@@ -1,4 +1,4 @@
-class CreateCourses < ActiveRecord::Migration
+class CreateCourses < ActiveRecord::Migration[5.0]
   def change
     create_table :courses, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8' do |t|
       t.string :ch_name

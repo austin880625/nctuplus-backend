@@ -1,4 +1,4 @@
-class CreateTablePublicQa < ActiveRecord::Migration
+class CreateTablePublicQa < ActiveRecord::Migration[5.0]
   def change
     create_table :course_map_public_comments do |t|
     	t.integer :user_id

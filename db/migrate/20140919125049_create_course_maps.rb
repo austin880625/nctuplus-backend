@@ -1,4 +1,4 @@
-class CreateCourseMaps < ActiveRecord::Migration
+class CreateCourseMaps < ActiveRecord::Migration[5.0]
   def change
     create_table :course_maps do |t|
       t.integer :department_id

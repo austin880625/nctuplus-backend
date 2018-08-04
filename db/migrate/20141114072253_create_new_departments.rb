@@ -1,4 +1,4 @@
-class CreateNewDepartments < ActiveRecord::Migration
+class CreateNewDepartments < ActiveRecord::Migration[5.0]
   def change
     create_table :new_departments do |t|
 			t.integer :degree

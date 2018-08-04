@@ -1,4 +1,4 @@
-class CreateCourseGroupLists < ActiveRecord::Migration
+class CreateCourseGroupLists < ActiveRecord::Migration[5.0]
   def change
     create_table :course_group_lists do |t|
 			t.integer :course_group_id

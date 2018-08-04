@@ -1,4 +1,4 @@
-class CreateSubDiscusses < ActiveRecord::Migration
+class CreateSubDiscusses < ActiveRecord::Migration[5.0]
   def change
     create_table :sub_discusses do |t|
 			t.integer :user_id

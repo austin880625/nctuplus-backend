@@ -1,4 +1,4 @@
-class DropGrade < ActiveRecord::Migration
+class DropGrade < ActiveRecord::Migration[5.0]
   def change
 		drop_table :grades
   end
