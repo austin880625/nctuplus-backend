@@ -1,5 +1,5 @@
 == README
-
+[rdoc-image:https://travis-ci.org/austin880625/nctuplus-backend.svg?branch=master]
 https://plus.nctu.edu.tw
 
 NCTU+ is A gathering of designers and programmers.
@@ -10,7 +10,7 @@ Our goals include but not limit to information transparency, user experience imp
 
 We also develop cool tools for NCTUers.
 
-Resent projects: 
+Recent projects:
 * Learning management system
 * Student activities bulletin board
 * Second-hand book trading platform
@@ -33,4 +33,3 @@ GPL License. Copyright 2014-2016 nctuplus.
     but WITHOUT ANY WARRANTY; without even the implied warranty of
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details. <http://www.gnu.org/licenses/>
-
