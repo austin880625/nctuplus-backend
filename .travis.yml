@@ -6,7 +6,7 @@ jobs:
         - docker
       before_install:
         - openssl aes-256-cbc -K $encrypted_613f6608c56d_key -iv $encrypted_613f6608c56d_iv -in secrets.tar.enc -out secrets.tar -d
-        - tar -xf secrets.tar -C config/
+        - tar -xvf secrets.tar -C config/
       install:
         - docker-compose build
         - docker-compose up app
