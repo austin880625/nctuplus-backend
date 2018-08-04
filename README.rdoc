@@ -1,5 +1,5 @@
 == README
-[rdoc-image:https://travis-ci.org/austin880625/nctuplus-backend.svg?branch=master]
+{<img src="https://travis-ci.org/austin880625/nctuplus-backend.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/austin880625/nctuplus-backend]
 https://plus.nctu.edu.tw
 
 NCTU+ is A gathering of designers and programmers.
