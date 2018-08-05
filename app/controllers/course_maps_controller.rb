@@ -1,8 +1,8 @@
 class CourseMapsController < ApplicationController
 	#include CourseMapsHelper
 
-	before_filter :checkCourseMapPermission, :except=>[:public, :index, :show]#, :only=>[:edit, :destroy, :update, :course_action, :action_new, :action_update, :action_delete, :action_fchange, :course_group_action, :update_cm_head, :credit_action, :notify_user] #:checkTopManager
-	#before_filter :checkLogin, :only=>[:cm_public_comment_action]
+	before_action :checkCourseMapPermission, :except=>[:public, :index, :show]#, :only=>[:edit, :destroy, :update, :course_action, :action_new, :action_update, :action_delete, :action_fchange, :course_group_action, :update_cm_head, :credit_action, :notify_user] #:checkTopManager
+	#before_action :checkLogin, :only=>[:cm_public_comment_action]
 ##### resource controller
 
 	def public #return json for index

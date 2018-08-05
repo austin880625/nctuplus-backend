@@ -2,8 +2,8 @@ class PastExamsController < ApplicationController
   # GET /files
   # GET /files.json
   
-  before_filter :checkLogin, :only=>[:upload, :new, :update, :create, :destroy]
-  before_filter :checkNCTULogin, :only=>[:show]
+  before_action :checkLogin, :only=>[:upload, :new, :update, :create, :destroy]
+  before_action :checkNCTULogin, :only=>[:show]
 
 	def index	#get by ct_id
 		if current_user && params[:mine]=="true"

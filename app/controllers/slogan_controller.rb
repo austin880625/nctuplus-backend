@@ -1,5 +1,5 @@
 class SloganController < ApplicationController
-    before_filter :checkTopManager
+    before_action :checkTopManager
     before_action :set_slogan, :only => [ :show, :edit, :update, :destroy]
 
     def index
