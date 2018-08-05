@@ -7,15 +7,15 @@ jobs:
   - before_install:
     - openssl aes-256-cbc -K $encrypted_7b9dbc922c26_key -iv $encrypted_7b9dbc922c26_iv
       -in secrets.tar.enc -out secrets.tar -d
-    - tar -xvf secrets.tar -C config/
+    - tar -xvf secrets.tar -C config/ | tee -a travis.log
     install:
-    - docker-compose build
-    - docker-compose up -d app
+    - docker-compose build >> travis.log
+    - docker-compose up -d app | tee -a travis.log
     - until docker-compose exec mysql mysql -uroot --password=${MYSQL_ROOT_PASSWORD}
-      -e 'SHOW DATABASES;'; do sleep 1; done
+      -e 'SHOW DATABASES;' 2>/dev/null ; do sleep 3; done
     script:
-    - docker-compose exec app rails db:migrate > migrate.log
+    - docker-compose exec app rails db:migrate >> travis.log
     - docker-compose exec app bundle exec rspec
     - docker-compose exec app rails_best_practices .
     after_failure:
-    - cat migrate.log
+    - cat travis.log
