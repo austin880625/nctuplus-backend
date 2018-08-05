@@ -1,8 +1,8 @@
 class DiscussesController < ApplicationController
 	# 
 	#layout false, :only =>[:list_by_course]
-	before_filter :checkLogin, :only=>[:new, :update, :like, :create, :update, :delete]
-	#before_filter :checkOwner, :only=>[:update, :delete]
+	before_action :checkLogin, :only=>[:new, :update, :like, :create, :update, :delete]
+	#before_action :checkOwner, :only=>[:update, :delete]
 
 
 	def index

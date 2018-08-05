@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
 
-  before_filter :checkLogin, :only=>[:simulation, :add_simulated_course, :del_simu_course]
+  before_action :checkLogin, :only=>[:simulation, :add_simulated_course, :del_simu_course]
 
   def index
     @sem_sel=Semester.all.order("id DESC").pluck(:name, :id)
@@ -8,7 +8,7 @@ class CoursesController < ApplicationController
       @q = CourseDetail.search_by_q_and_text(params[:q],params[:custom_search])
     elsif current_user.try(:department_id) && current_user.department.has_courses # e.x 資工系資工組/網多/資電
       @q = CourseDetail.search({:department_id_eq=>current_user.department_id})
-    else	
+    else
       @q = CourseDetail.search({})
     end
     cds=@q.result(distinct: true).includes(:course, :course_teachership, :semester, :department)
@@ -30,7 +30,7 @@ class CoursesController < ApplicationController
       if params[:q].blank?
         @q=CourseDetail.search({:id_in=>[0]})
       else
-        @q=CourseDetail.search(params[:q])				
+        @q=CourseDetail.search(params[:q])
       end
     end
     cds=@q.result(distinct: true).includes(:course, :course_teachership, :semester, :department)
@@ -42,7 +42,7 @@ class CoursesController < ApplicationController
         cd.to_search_result
       }
     }
-    @result[:highest_score_ct] = highest_score_ct if !params[:required_search].blank? 
+    @result[:highest_score_ct] = highest_score_ct if !params[:required_search].blank?
     render "courses/search/mini", :layout=>false
   end
 
@@ -58,10 +58,10 @@ class CoursesController < ApplicationController
     respond_to do |format|
       format.xls{
         response.headers['Content-Type'] = "application/vnd.ms-excel"
-        response.headers['Content-Disposition'] = " attachment; filename=\"#{@sem.name}.xls\" "	
+        response.headers['Content-Disposition'] = " attachment; filename=\"#{@sem.name}.xls\" "
       }
     end
-  end	
+  end
 
   def count_times(ch_name, array)
     count_hash = {}
@@ -106,7 +106,7 @@ class CoursesController < ApplicationController
 
 
   def show
-    cd=CourseDetail.includes(:course_teachership, :course, :semester, :department, :normal_scores).find(params[:id])	
+    cd=CourseDetail.includes(:course_teachership, :course, :semester, :department, :normal_scores).find(params[:id])
     incViewTime(cd)
     @list_type=[["[考試]",1],["[作業]",2],["[上課]",3],["[其他]",4]]
     @data = {
@@ -128,7 +128,7 @@ class CoursesController < ApplicationController
     #render "/course_content/show"
   end
 
-  def simulation  
+  def simulation
     @degree_sel=[['大學部','3'],['研究所','2'],['大學部共同','0']]
     @dept_sel=Department.searchable.pluck(:ch_name, :id)
     @q=CourseDetail.search({:id_in=>[0]})
@@ -149,7 +149,7 @@ class CoursesController < ApplicationController
           mesg="新增成功!"
         else
           alt_class="info"
-          mesg="您已加入此課程!"		
+          mesg="您已加入此課程!"
         end
       end
     else
@@ -209,4 +209,3 @@ class CoursesController < ApplicationController
   end
 
 end
-

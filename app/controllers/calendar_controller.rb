@@ -1,6 +1,6 @@
 class CalendarController < ApplicationController
   
-  before_filter :checkLogin, :only=>[:index, :get_event]
+  before_action :checkLogin, :only=>[:index, :get_event]
 
   def index
   end

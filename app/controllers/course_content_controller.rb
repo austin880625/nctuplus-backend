@@ -1,6 +1,6 @@
 class CourseContentController < ApplicationController
 	#include CourseContentHelper
-	before_filter :checkLogin, :only=>[ :course_action, :rate_cts]
+	before_action :checkLogin, :only=>[ :course_action, :rate_cts]
 		
 	def rate_cts
     ct=CourseTeachership.find(params[:ct_id])

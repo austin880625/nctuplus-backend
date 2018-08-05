@@ -1,7 +1,7 @@
 class ScoresController < ApplicationController
 	include ScoresHelper
 	include CourseMapsHelper
-	before_filter :checkNCTULogin#, :only=>[:select_cf, :import, :gpa] (ALL need) 
+	before_action :checkNCTULogin#, :only=>[:select_cf, :import, :gpa] (ALL need) 
 	
 
 	def import

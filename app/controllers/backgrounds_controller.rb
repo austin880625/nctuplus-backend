@@ -1,5 +1,5 @@
 class BackgroundsController < ApplicationController
-  before_filter :checkTopManager
+  before_action :checkTopManager
   before_action :set_background, :only => [ :show, :edit, :update, :destroy]
   
   def index

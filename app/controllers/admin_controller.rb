@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
 	#include CourseMapsHelper
-	before_filter :checkTopManager,:only=>[:users, :ee104, :change_role, :change_dept, :discusses,:discuss_verify, :user_statistics]
-	before_filter :checkCourseMapPermission,:only=>[:course_maps] #:checkTopManager
+	before_action :checkTopManager,:only=>[:users, :ee104, :change_role, :change_dept, :discusses,:discuss_verify, :user_statistics]
+	before_action :checkCourseMapPermission,:only=>[:course_maps] #:checkTopManager
 
 	def discuss_verify
 		status=DiscussVerify.create(:user_id=>current_user.id, :discuss_id=>params[:id], :pass=>params[:pass]).valid?
