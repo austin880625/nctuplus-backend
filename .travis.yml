@@ -7,9 +7,12 @@ jobs:
   - before_install:
     - openssl aes-256-cbc -K $encrypted_613f6608c56d_key -iv $encrypted_613f6608c56d_iv -in secrets.tar.enc -out secrets.tar -d
     - tar -xvf secrets.tar -C config/
+    - sudo apt-get update
+    - sudo apt-get install -y nodejs libgmp3-dev ruby-railties-4.0
+    - mysql -e 'CREATE DATABASE nctuplus_development;'
     script:
-    - rails db:migrate >> travis.log
+    - bundle exec rails db:migrate >> travis.log
     - bundle exec rspec
-    - rails_best_practices .
+    - bundle exec rails_best_practices .
     after_failure:
     - cat travis.log
